@@ -1,22 +1,82 @@
-# 1. Generate AI-picture
+# Oh Honey
 
-![Hero-image of honey jars](public/media/hero-honeyjars.png)
+A fictional local honey webshop concept built as a front-end showcase project.
 
-On theme with the svg animation, this AI-generated picture aims to be used in some kind of honey-related webproject, possibly a local honey webshop. As the labels are minimalist and earthy, using kraft-paper textures and floral illustrations to reinforce a “organic/local artisan” identity.
+Oh Honey started as an exploration of AI-assisted visual creation and SVG animation, then evolved into a complete single-page brand experience with multiple content sections, responsive navigation, and a custom loading intro.
 
-### Possible use:
-
-This image would work well as the homepage hero image for a webshop. Its wide composition, warm lighting, and centered arrangement of honey jars make it ideal for introducing the brand the moment a visitor lands on the site. Text such as a headline, short description, and a “Shop Now” button could easily be placed around the jars without covering important details in the image.
-
-The image could also work as a category banner for collections such as floral honey or seasonal harvests. Because the jars are evenly arranged and surrounded by natural empty space, the image can easily be cropped into different formats while still maintaining a clean and balanced composition. This also makes it suitable for both desktop and mobile layouts across multiple pages. It could additionally function as a promotional banner for seasonal campaigns, gift collections, or featured products.
-
-Another strong use would be within an “About Us” or brand story section. The rustic wooden table, soft sunlight, flowers, and honeycomb create a calm and authentic atmosphere that supports storytelling around local beekeeping, sustainable harvesting, or traditional production methods. The image feels personal and handcrafted, helping strengthen the emotional connection between the brand and the
-
-# 2. SVG-animation
-
-This animated SVG could serve as a logo animation for a fictive local honey store called "Oh Honey". The text in the animation functions as both the company name and logotype, making it well suited as an initial loading screen that greets visitors before they enter the webshop. 
-
-[Preview on Live Page ➚](https://medieinstitutet.github.io/fed25d-grafiska-verktyg-individuell-tildaegland/)
+[Live preview](https://tildaegland.github.io/oh-honey/)
 
 
-<img width="600" height="337" alt="svg-animation" src="https://github.com/user-attachments/assets/8d02e9ff-870a-4e33-9628-c12213d1fdcb" />
+## Project story
+
+This project began with two creative experiments:
+
+1. A generated hero visual for a honey brand concept.
+2. An animated SVG logo reveal.
+
+Instead of treating those as isolated assets, I expanded the idea into a full fictional webshop/brand website. The final result focuses on atmosphere, storytelling, and presentation quality, with the animation used as a branded loading screen and the visual system applied across the full page.
+
+## What the site includes
+
+- Branded loading screen with SVG logo animation.
+- Hero section with responsive image sources and strong visual identity.
+- Fully styled content sections for Shop, About, Recipes, and Visit.
+- Mobile-friendly navigation with a menu toggle and click-outside behavior.
+- Smooth transition from intro overlay to visible site content.
+- Footer with contact details, quick links, and social links.
+
+## Tech stack
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-663399?style=for-the-badge&logo=css&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+
+- Vite
+- TypeScript
+- SCSS (modular partial structure)
+- GSAP (animation timeline and motion control)
+
+## Key implementation details
+
+- Intro animation is controlled in TypeScript using GSAP timelines.
+- Motion behavior respects reduced-motion user preferences.
+- Navigation adapts at mobile breakpoint and updates aria attributes for accessibility.
+- Styling is organized into SCSS partials for sections and layout components.
+
+## Why this project is in my portfolio
+
+Oh Honey represents how I work from concept to polished UI:
+
+- Translating an initial visual idea into a complete product direction.
+- Turning a standalone SVG animation into purposeful interaction design.
+- Building a cohesive front-end with reusable structure and consistent brand tone.
+- Practicing realistic content architecture for future webshop projects.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build for production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Future improvements
+
+- Add product cards and filtering for a more realistic shop flow.
+- Connect to a small CMS or JSON data source for editable content.
+- Expand animation states with scroll-triggered section reveals.
+- Add automated tests for menu behavior and core interactions.
+
+## Credits
+
+- Brand concept, layout direction, and front-end implementation: Tilda Egland
+- Visual concept based on AI-assisted image generation and custom SVG animation work
