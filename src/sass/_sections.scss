@@ -7,8 +7,8 @@
 .storySection {
   --storyKickerColor: #{$inkSoft};
   --storyHeadingColor: #{$ink};
-  --storyTextColor: #{$inkSoft};
-  --storyLinkColor: #{$ink};
+  --storyTextColor: #{$ink};
+  --storyLinkColor: #{$inkSoft};
   --storyLinkBorderColor: rgba(50, 30, 9, 0.22);
 
   width: 100vw;
@@ -28,23 +28,25 @@
 }
 
 .storySection .sectionKicker {
-  font-family: $fontLogo;
+  margin: 0;
+  font-family: $fontUi;
   font-size: clamp(1rem, 1vw, 1.2rem);
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   line-height: 1.2;
   color: var(--storyKickerColor);
-  margin: 0;
+  margin-bottom: 1.5rem;
 }
 
 .storySection h2 {
-  margin: 0.9rem 0 0.45rem;
+  margin: 0;
   font-family: $fontDisplay;
   font-size: clamp(2rem, 4.4vw, 6rem);
-  line-height: 1.04;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: var(--storyHeadingColor);
+  margin-bottom: 1.5rem;
 }
 
 .storySection p {
@@ -54,16 +56,21 @@
   line-height: 1.7;
   color: var(--storyTextColor);
   max-width: 80%;
+  margin-bottom: 1.5rem;
 }
 
 .inlineLink {
   display: inline-block;
-  margin-top: 1rem;
   color: var(--storyLinkColor);
   font-weight: 700;
-  font-family: $fontUi;
+  font-family: $fontLogo;
   text-decoration: none;
-  border-bottom: 2px solid var(--storyLinkBorderColor);
+}
+
+.inlineLink:hover {
+  color: var(--storyLinkColor);
+  text-decoration: underline;
+  text-decoration-color: var(--storyLinkColor);
 }
 
 
