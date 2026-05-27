@@ -66,27 +66,12 @@
 	text-decoration: none;
 }
 
-.paymentMethods {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-}
-
-.paymentMethods span {
-	padding: 0.45rem 0.7rem;
-	border: 1px solid rgba(50, 30, 9, 0.16);
-	color: $brownFinished;
-	font-family: $fontUi;
-	font-size: 0.86rem;
-}
-
 .footerBottom {
 	margin-top: 2rem;
 	padding-top: 2rem;
 	padding-bottom: 0;
 	border-top: 1px solid rgba(50, 30, 9, 0.12);
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
 }
@@ -104,24 +89,31 @@
 	padding: 2rem $marginHorizontalSmallScreen 3rem;
 }
 	.footerGrid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(2, minmax(0, auto));
 		gap: 2rem;
-	}
-
-	.footerBottom {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-
-
-	.siteFooter {
-		padding: 2rem $marginHorizontalSmallScreen;
 	}
 }
 
 @media (max-width: 520px) {
 	.footerGrid {
 		grid-template-columns: 1fr;
+		justify-items: center;
+		text-align: center;
+		gap: 3rem;
+	}
+
+	.footerLogoRow {
+		justify-content: center;
+	}
+
+	.footerColumn {
+		align-items: center;
+	}
+
+
+	.footerBottom {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 	}
 }
