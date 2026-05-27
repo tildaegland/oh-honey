@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon/favicon-16x16.png" />
@@ -21,16 +22,17 @@
 <body>
   <div class="pageShell">
     <div id="loaderOverlay" class="loaderOverlay" aria-label="Loading screen">
-      <main class="loaderMain">
+      <div class="loaderMain">
         <div id="svg-frame" class="svgFrame"></div>
-      </main>
+      </div>
     </div>
 
-    <div id="siteContent" class="siteContent" aria-hidden="true" >
+    <main id="siteContent" class="siteContent" aria-hidden="true" >
       <header class="siteHeader">
         <nav class="siteNav">
           <a class="brand" href="#home" aria-label="Oh Honey home">
-            <span class="brandLogo" data-inline-svg="media/svg/oh-honey-logo.svg" aria-hidden="true"></span>
+            <span class="brandLogo logoText" data-inline-svg="media/svg/oh-honey-logo.svg" aria-hidden="true"></span>
+            <span class="brandLogo logoBee" data-inline-svg="media/svg/logo-bee.svg" aria-hidden="true"></span>
           </a>
           <ul id="primaryNavLinks" class="navLinks" aria-label="Primary navigation">
             <li><a href="#shop">Honey</a></li>
@@ -181,7 +183,7 @@
           <p>&copy; 2026 Oh Honey</p>
         </div>
       </footer>
-    </div>
+    </main>
   </div>
   <script type="module" src="/src/main.ts"></script>
 </body>

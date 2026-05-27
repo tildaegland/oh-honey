@@ -27,6 +27,7 @@
 }
 
 
+
 .brandLogo,
 .navIcon {
 	height: clamp(22px, 3vw, 32px);
@@ -35,6 +36,15 @@
 	align-items: center;
 	justify-content: center;
 }
+
+// Logo visibility control
+.brandLogo.logoBee {
+	display: none;
+}
+.brandLogo.logoText {
+	display: inline-flex;
+}
+
 
 .navMenuIcon {
 	height: clamp(26px, 3.8vw, 38px);
@@ -129,7 +139,7 @@
 	}
 
 	.siteNav {
-		padding: 2rem  $marginHorizontalSmallScreen;
+		padding: 1.5rem $marginHorizontalSmallScreen;
 		grid-template-columns: 1fr auto;
 		position: relative;
 	}
@@ -168,5 +178,17 @@
 		z-index: 1;
 	}
 
-	
+
+}
+
+
+@media (max-width: 500px) {
+		.brandLogo.logoText {
+			display: none !important;
+		}
+		.brandLogo.logoBee {
+			display: inline-flex !important;
+			align-items: center;
+			justify-content: center;
+		}
 }

@@ -1,22 +1,37 @@
 @use './variables' as *;
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	background-color: white;
+	//background: linear-gradient(180deg, #ffffff 0%, $honeyGold 100%);
 }
 
-* {
-	box-sizing: border-box;
+html, body {
+    scrollbar-width: none;      // Firefox
+    -ms-overflow-style: none;   // Old Edge/IE
+}
+
+body::-webkit-scrollbar {
+    display: none;              // Chrome/Safari
 }
 
 body {
 	margin: 0;
 	min-height: 100vh;
     max-width: 100vw;
+	background: transparent;
 	color: $ink;
 	font-family: $fontUi;
+}
+
+main {
 	background:
-		linear-gradient(180deg, #fff9eb 20%, #fef2d6 100%);
+		linear-gradient(180deg, white 10%, $waxCream 100%);
 }
 
 .pageShell {
