@@ -1,0 +1,37 @@
+@use './variables' as *;
+
+.loaderOverlay {
+	position: fixed;
+	inset: 0;
+	z-index: 30;
+	display: grid;
+	place-items: center;
+	background: $honeyGold;
+}
+
+.loaderOverlay.isHidden {
+	display: none;
+}
+
+.loaderMain {
+	width: clamp(320px, 70vw, 1400px);
+}
+
+.svgFrame {
+	width: 100%;
+	opacity: 1;
+}
+
+.svgFrame svg,
+.logoSvg {
+	width: 100%;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin-inline: auto;
+}
+
+.svgFrame.is-loaded {
+	opacity: 1;
+	transform: translateY(0);
+}

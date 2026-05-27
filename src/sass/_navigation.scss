@@ -1,0 +1,144 @@
+@use './variables' as *;
+
+.siteHeader {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	padding: 0;
+}
+
+.siteNav {
+	background: rgba(255, 255, 255, 0.964);
+	backdrop-filter: blur(6px);
+	padding: 1.5rem $marginHorizontalBigScreen;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	width: 100%;
+	//box-shadow: 0 4px 18px rgba(0, 0, 0, 0.095);
+}
+
+.brand {
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-self: start;
+}
+
+.brandLogo {
+	height: clamp(26px, 3.2vw, 36px);
+	width: auto;
+	display: block;
+}
+
+.navLinks {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+	padding: 0;
+	margin: 0;
+	justify-self: center;
+}
+
+.navLinks a {
+	text-decoration: none;
+	color: $ink;
+	font-family: $fontUi;
+	font-size: clamp(1rem, 1.4vw, 1.4rem);
+	font-weight: 200;
+	display: inline-flex;
+	align-items: center;
+	transition: color 0.2s ease;
+}
+
+.navLinks a:hover {
+	color: $honeyGold;
+}
+
+.navIcons {
+	display: flex;
+	align-items: center;
+	justify-self: end;
+	gap: 2rem;
+}
+
+.navIconLink {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.navIcon {
+	height: clamp(28px, 3vw, 32px);
+	width: auto;
+	display: block;
+}
+
+
+.navIcon:hover {
+	cursor: pointer;
+}
+
+.navMenuButton {
+	display: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	justify-self: center;
+}
+
+
+
+@media (max-width: 900px) {
+	.siteHeader {
+		position: sticky;
+		top: 0;
+	}
+
+	.siteNav {
+		padding: 2rem  $marginHorizontalSmallScreen;
+		grid-template-columns: 1fr auto;
+		position: relative;
+	}
+
+	.navLinks {
+		display: none;
+	}
+
+	.navIcons {
+
+		gap: 1.5rem;
+	}
+
+	.siteNav.isMenuOpen .navLinks {
+		display: flex;
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		background-color: $waxCream;
+		top: 0;
+		padding: 1rem;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 3rem;
+
+
+		a {
+			font-size: clamp(2.8rem, 5.2vw, 6rem);
+		}
+
+	}
+
+	.navMenuButton {
+		display: inline-flex;
+		z-index: 1;
+	}
+
+	
+}

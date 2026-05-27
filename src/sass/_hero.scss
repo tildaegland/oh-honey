@@ -1,0 +1,98 @@
+@use './variables' as *;
+
+.heroSection {
+    margin-top: 0;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow: hidden;
+}
+
+.heroSection::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.6) 10%,
+            rgba(0, 0, 0, 0.22) 30%,
+            rgba(0, 0, 0, 0.08) 55%,
+            rgba(0, 0, 0, 0) 75%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heroPicture {
+    display: block;
+    width: 100vw;
+    line-height: 0;
+}
+
+.heroText {
+    width: min(780px, calc(100% - 4rem));
+    position: absolute;
+    left: $marginHorizontalBigScreen;
+    bottom: $marginHorizontalBigScreen;
+    transform: none;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    text-align: left;
+    color: white;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.heroText h1 {
+    font-family: $fontDisplay;
+    font-size: clamp(2rem, 5.2vw, 6rem);
+    line-height: 1;
+    margin: 0.18rem 0 0.9rem;
+    letter-spacing: -0.02em;
+}
+
+.heroText p {
+    margin: 0;
+    color: white;
+    line-height: 1.5;
+    max-width: 54ch;
+    font-family: $fontUi;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.heroImage {
+    width: 100vw;
+    height: clamp(500px, 86vh, 1400px);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    background: $waxCream;
+    border-top: none;
+}
+
+
+
+@media (max-width: 900px) {
+
+
+    .heroText {
+    left: $marginHorizontalSmallScreen;
+    bottom: $marginHorizontalSmallScreen;
+}
+
+    .heroText h1 {
+        max-width: 60%;
+    }
+
+    .heroText p {
+        font-size: 1rem;
+    }
+
+
+    .heroImage {
+        height: clamp(300px, 70vh, 400px);
+    }
+
+
+}
