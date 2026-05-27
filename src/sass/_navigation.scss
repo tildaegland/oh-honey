@@ -8,7 +8,8 @@
 }
 
 .siteNav {
-	background: rgba(255, 255, 255, 0.964);
+	// background: rgba(255, 255, 255, 0.964);
+	background: linear-gradient(180deg, #ffffff 40%, #ffffffe2 100%);
 	backdrop-filter: blur(6px);
 	padding: 1.5rem $marginHorizontalBigScreen;
 	display: grid;
