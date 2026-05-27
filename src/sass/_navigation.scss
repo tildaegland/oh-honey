@@ -36,6 +36,10 @@
 	justify-content: center;
 }
 
+.navMenuIcon {
+	height: clamp(26px, 3.8vw, 38px);
+}
+
 .brandLogo svg,
 .navIcon svg {
 	height: 100%;
@@ -61,6 +65,14 @@
 	display: inline-flex;
 	align-items: center;
 	transition: color 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.navLinks a:focus,
+.navLinks a:focus-visible,
+.navLinks a:active {
+	outline: none;
+	box-shadow: none;
 }
 
 .navLinks a:hover {
@@ -98,6 +110,14 @@
 	align-items: center;
 	justify-content: center;
 	justify-self: center;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.navMenuButton:focus,
+.navMenuButton:focus-visible,
+.navMenuButton:active {
+	outline: none;
+	box-shadow: none;
 }
 
 
