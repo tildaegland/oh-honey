@@ -30,7 +30,7 @@
       <header class="siteHeader">
         <nav class="siteNav">
           <a class="brand" href="#home" aria-label="Oh Honey home">
-            <img class="brandLogo" src="%BASE_URL%media/svg/oh-honey.svg" alt="Oh Honey" />
+            <span class="brandLogo" data-inline-svg="media/svg/oh-honey.svg" aria-hidden="true"></span>
           </a>
           <ul id="primaryNavLinks" class="navLinks" aria-label="Primary navigation">
             <li><a href="#shop">Honey</a></li>
@@ -41,14 +41,15 @@
 
           <div class="navIcons" aria-label="Quick actions">
             <a class="navIconLink" aria-label="Search">
-              <img class="navIcon" src="%BASE_URL%media/svg/search.svg" alt="Search" />
+              <span class="navIcon" data-inline-svg="media/svg/search.svg" aria-hidden="true"></span>
             </a>
             <a class="navIconLink" aria-label="Shopping bag">
-              <img class="navIcon" src="%BASE_URL%media/svg/shopping-bag.svg" alt="Shopping bag" />
+              <span class="navIcon" data-inline-svg="media/svg/shopping-bag.svg" aria-hidden="true"></span>
             </a>
             <button class="navMenuButton" type="button" aria-label="Open navigation menu" aria-expanded="false"
               aria-controls="primaryNavLinks">
-              <img class="navIcon" src="%BASE_URL%media/svg/menu.svg" alt="" aria-hidden="true" />
+              <span class="navIcon navMenuIcon" data-inline-svg="media/svg/menu.svg" data-svg-closed="media/svg/menu.svg"
+                data-svg-open="media/svg/close-button.svg" aria-hidden="true"></span>
             </button>
           </div>
         </nav>
@@ -137,7 +138,7 @@
 
       <footer class="siteFooter">
         <div class="footerLogoRow">
-          <img class="footerBee" src="%BASE_URL%media/svg/logo-bee.svg" alt="Oh Honey bee logo" />
+          <span class="footerBee" data-inline-svg="media/svg/logo-bee.svg" role="img" aria-label="Oh Honey bee logo"></span>
         </div>
 
         <div class="footerGrid">

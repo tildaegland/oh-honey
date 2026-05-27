@@ -17,8 +17,8 @@
     <mask id="search-d" fill="#ffffff">
       <use xlink:href="#search-c"/>
     </mask>
-    <use fill="#000000" fill-rule="nonzero" xlink:href="#search-c"/>
-    <g fill="#000000" mask="url(#search-d)">
+    <use fill="#321E09" fill-rule="nonzero" xlink:href="#search-c"/>
+    <g fill="#321E09" mask="url(#search-d)">
       <rect width="24" height="24" transform="translate(-2 -2)"/>
     </g>
   </g>

@@ -15,25 +15,103 @@ const ASSET_BASE_URL = import.meta.env.BASE_URL
 let hasTransitionedToSite = false
 let beeGroupEl: SVGGElement | null = null
 let beeLoopTween: gsap.core.Tween | null = null
+const inlineSvgCache = new Map<string, Promise<string>>()
+
+function getSvgAssetUrl(assetPath: string): string {
+  if (assetPath.startsWith('/')) {
+    return `${ASSET_BASE_URL}${assetPath.slice(1)}`
+  }
+  return `${ASSET_BASE_URL}${assetPath}`
+}
+
+function fetchInlineSvg(assetPath: string): Promise<string> {
+  const cached = inlineSvgCache.get(assetPath)
+  if (cached) {
+    return cached
+  }
+
+  const request = fetch(getSvgAssetUrl(assetPath)).then((res) => {
+    if (!res.ok) {
+      throw new Error(`Failed to fetch SVG: ${assetPath}`)
+    }
+    return res.text()
+  })
+
+  inlineSvgCache.set(assetPath, request)
+  return request
+}
+
+function parseInlineSvg(svgText: string): SVGSVGElement | null {
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(svgText, 'image/svg+xml')
+  const svg = doc.querySelector('svg')
+
+  if (!(svg instanceof SVGSVGElement)) {
+    return null
+  }
+
+  svg.setAttribute('focusable', 'false')
+  svg.setAttribute('aria-hidden', 'true')
+  return svg
+}
+
+function injectInlineSvg(container: HTMLElement, assetPath: string): Promise<void> {
+  return fetchInlineSvg(assetPath).then((svgText) => {
+    const svg = parseInlineSvg(svgText)
+    if (!svg) {
+      return
+    }
+
+    container.replaceChildren(svg)
+    container.dataset.inlineSvg = assetPath
+  })
+}
+
+function loadInlineSvgAssets(): void {
+  const inlineTargets = Array.from(document.querySelectorAll<HTMLElement>('[data-inline-svg]'))
+
+  inlineTargets.forEach((target) => {
+    const assetPath = target.dataset.inlineSvg
+    if (!assetPath) {
+      return
+    }
+
+    injectInlineSvg(target, assetPath).catch(() => {
+      target.replaceChildren()
+    })
+  })
+}
 
 function setupResponsiveNavMenu(): void {
   const siteNav = document.querySelector('.siteNav')
   const menuButton = document.querySelector('.navMenuButton')
   const primaryNavLinks = document.getElementById('primaryNavLinks')
-  const menuButtonIcon = menuButton?.querySelector('img')
+  const menuButtonIcon = menuButton?.querySelector('.navMenuIcon')
 
   if (
     !(siteNav instanceof HTMLElement) ||
     !(menuButton instanceof HTMLButtonElement) ||
     !(primaryNavLinks instanceof HTMLUListElement) ||
-    !(menuButtonIcon instanceof HTMLImageElement)
+    !(menuButtonIcon instanceof HTMLElement)
   ) {
     return
   }
 
   const mobileMenuQuery = window.matchMedia(MOBILE_NAV_BREAKPOINT)
-  const menuIconPath = `${ASSET_BASE_URL}media/svg/menu.svg`
-  const closeIconPath = `${ASSET_BASE_URL}media/svg/close-button.svg`
+  const menuIconPath = menuButtonIcon.dataset.svgClosed ?? 'media/svg/menu.svg'
+  const closeIconPath = menuButtonIcon.dataset.svgOpen ?? 'media/svg/close-button.svg'
+  let currentMenuIconAsset = ''
+
+  const setMenuIcon = (assetPath: string): void => {
+    if (currentMenuIconAsset === assetPath) {
+      return
+    }
+
+    currentMenuIconAsset = assetPath
+    injectInlineSvg(menuButtonIcon, assetPath).catch(() => {
+      menuButtonIcon.replaceChildren()
+    })
+  }
 
   const setMenuState = (isOpen: boolean): void => {
     siteNav.classList.toggle('isMenuOpen', isOpen)
@@ -42,7 +120,7 @@ function setupResponsiveNavMenu(): void {
       'aria-label',
       isOpen ? 'Close navigation menu' : 'Open navigation menu'
     )
-    menuButtonIcon.setAttribute('src', isOpen ? closeIconPath : menuIconPath)
+    setMenuIcon(isOpen ? closeIconPath : menuIconPath)
   }
 
   setMenuState(false)
@@ -296,6 +374,7 @@ function startBeeLoop(beeGroup: SVGGElement): void {
 
 const frame = document.getElementById('svg-frame')
 
+loadInlineSvgAssets()
 setupResponsiveNavMenu()
 
 if (frame instanceof HTMLElement) {

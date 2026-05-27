@@ -25,8 +25,19 @@
 	justify-self: start;
 }
 
-.brandLogo {
-	height: clamp(26px, 3.2vw, 36px);
+
+.brandLogo,
+.navIcon {
+	height: clamp(22px, 3vw, 32px);
+	width: auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.brandLogo svg,
+.navIcon svg {
+	height: 100%;
 	width: auto;
 	display: block;
 }
@@ -69,11 +80,7 @@
 	text-decoration: none;
 }
 
-.navIcon {
-	height: clamp(28px, 3vw, 32px);
-	width: auto;
-	display: block;
-}
+
 
 
 .navIcon:hover {
