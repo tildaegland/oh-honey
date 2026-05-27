@@ -10,6 +10,7 @@ window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 const INTRO_BROWN = '#65350e'
 const PAGE_FADE_DURATION = 1.4
 const MOBILE_NAV_BREAKPOINT = '(max-width: 900px)'
+const ASSET_BASE_URL = import.meta.env.BASE_URL
 
 let hasTransitionedToSite = false
 let beeGroupEl: SVGGElement | null = null
@@ -31,8 +32,8 @@ function setupResponsiveNavMenu(): void {
   }
 
   const mobileMenuQuery = window.matchMedia(MOBILE_NAV_BREAKPOINT)
-  const menuIconPath = '/media/svg/menu.svg'
-  const closeIconPath = '/media/svg/close-button.svg'
+  const menuIconPath = `${ASSET_BASE_URL}media/svg/menu.svg`
+  const closeIconPath = `${ASSET_BASE_URL}media/svg/close-button.svg`
 
   const setMenuState = (isOpen: boolean): void => {
     siteNav.classList.toggle('isMenuOpen', isOpen)
@@ -298,7 +299,7 @@ const frame = document.getElementById('svg-frame')
 setupResponsiveNavMenu()
 
 if (frame instanceof HTMLElement) {
-  fetch('/media/svg/oh-honey.svg')
+  fetch(`${ASSET_BASE_URL}media/svg/oh-honey.svg`)
     .then((res) => res.text())
     .then((svgText) => {
       frame.innerHTML = svgText
