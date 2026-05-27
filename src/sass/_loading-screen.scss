@@ -3,10 +3,10 @@
 .loaderOverlay {
 	position: fixed;
 	inset: 0;
-	z-index: 30;
+	z-index: 50;
 	display: grid;
 	place-items: center;
-	background: $honeyGold;
+	background-color: $honeyGold;
 }
 
 .loaderOverlay.isHidden {

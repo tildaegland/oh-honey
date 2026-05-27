@@ -139,8 +139,8 @@ function animateBeeIntro(
       onComplete: () => {
         const endIntroTl = gsap.timeline()
         endIntroTl.to(document.body, {
-          backgroundColor: '#ffffff',
-          duration: 0.5,
+          backgroundColor: '#ffffff00',
+          duration: PAGE_FADE_DURATION,
           ease: 'power2.inOut'
         })
         endIntroTl.call(onIntroComplete, undefined, 0.25)
