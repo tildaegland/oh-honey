@@ -20,14 +20,17 @@
 </head>
 
 <body>
+      
   <div class="pageShell">
+
+
     <div id="loaderOverlay" class="loaderOverlay" aria-label="Loading screen">
       <div class="loaderMain">
         <div id="svg-frame" class="svgFrame"></div>
       </div>
     </div>
 
-    <main id="siteContent" class="siteContent" aria-hidden="true" >
+    <div id="siteContent" class="siteContent" aria-hidden="true">
       <header class="siteHeader">
         <nav class="siteNav">
           <a class="brand" href="#home" aria-label="Oh Honey home">
@@ -50,97 +53,107 @@
             </a>
             <button class="navMenuButton" type="button" aria-label="Open navigation menu" aria-expanded="false"
               aria-controls="primaryNavLinks">
-              <span class="navIcon navMenuIcon" data-inline-svg="media/svg/menu.svg" data-svg-closed="media/svg/menu.svg"
-                data-svg-open="media/svg/close-button.svg" aria-hidden="true"></span>
+              <span class="navIcon navMenuIcon" data-inline-svg="media/svg/menu.svg"
+                data-svg-closed="media/svg/menu.svg" data-svg-open="media/svg/close-button.svg"
+                aria-hidden="true"></span>
             </button>
           </div>
         </nav>
       </header>
 
-      <section id="home" class="heroSection">
-        <picture class="heroPicture">
-          <source srcset="%BASE_URL%media/hero-honeyjars.avif 1932w, %BASE_URL%media/hero-honeyjars-2x.avif 3864w" sizes="100vw" type="image/avif" />
-          <source srcset="%BASE_URL%media/hero-honeyjars.webp 1932w, %BASE_URL%media/hero-honeyjars-2x.webp 3864w" sizes="100vw" type="image/webp" />
-          <img class="heroImage" src="%BASE_URL%media/hero-honeyjars.png"
-            srcset="%BASE_URL%media/hero-honeyjars.png 1932w, %BASE_URL%media/hero-honeyjars-2x.png 3864w" sizes="100vw" width="1932" height="814"
-            alt="A display of handcrafted honey jars on a rustic wooden table" fetchpriority="high" />
-        </picture>
-        <div class="heroText">
-          <h1>Golden drops from neighborhood hives</h1>
-        </div>
-      </section>
-
-      <section id="shop" class="storySection sectionShop">
-        <div class="storyInner">
-          <p class="sectionKicker">Seasonal pick</p>
-          <h2>Clover honey, soft floral notes and slow sweetness.</h2>
-          <p>
-            A gentle everyday honey from spring clover fields. Smooth texture,
-            bright aroma, and perfect for tea, toast, and warm desserts.
-          </p>
-          <a class="inlineLink" href="">Check out our honey selection</a>
-        </div>
-        <img class="storyImage" src="%BASE_URL%media/cloverhoneyJar.png" alt="Clover honey jar preview" />
-      </section>
-
-      <section id="about" class="storySection sectionAbout">
-        <div class="storyInner">
-          <p class="sectionKicker">Our mission</p>
-          <h2>Pure honey, local bloom, slow craft.</h2>
-          <p>
-            Oh Honey works with neighborhood beekeepers to bottle honey that tastes
-            like the season it came from. No additives, no shortcuts, only careful
-            extraction and traceable harvests.
-          </p>
-          <a class="inlineLink" href="#visit">Meet the bees in person</a>
-        </div>
-        <img class="storyImage" src="%BASE_URL%media/honeyAndFlowers.jpeg" alt="Honey jar surrounded by flowers" />
-      </section>
-
-      <section id="recipes" class="storySection sectionRecipes">
-        <div class="storyInner">
-          <p class="sectionKicker">Sweeten up your day</p>
-          <h2>Cook with our honey</h2>
-          <p>
-            Start your morning with whipped honey toast, finish dinner with warm
-            honey cake, and add a drizzle of floral sweetness to cheese boards and
-            vanilla desserts.
-          </p>
-          <div class="recipeLinks">
-            <a class="inlineLink" href="https://www.bbcgoodfood.com/recipes/honey-cake" target="_blank"
-              rel="noreferrer">Honey cake ideas</a>
-            <a class="inlineLink" href="https://www.loveandlemons.com/honey-recipes/" target="_blank"
-              rel="noreferrer">More honey recipes</a>
+      <main>
+        <section id="home" class="heroSection">
+          <picture class="heroPicture">
+            <source srcset="%BASE_URL%media/hero-honeyjars.avif 1932w, %BASE_URL%media/hero-honeyjars-2x.avif 3864w"
+              sizes="100vw" type="image/avif" />
+            <source srcset="%BASE_URL%media/hero-honeyjars.webp 1932w, %BASE_URL%media/hero-honeyjars-2x.webp 3864w"
+              sizes="100vw" type="image/webp" />
+            <img class="heroImage" src="%BASE_URL%media/hero-honeyjars.png"
+              srcset="%BASE_URL%media/hero-honeyjars.png 1932w, %BASE_URL%media/hero-honeyjars-2x.png 3864w"
+              sizes="100vw" width="1932" height="814" alt="A display of handcrafted honey jars on a rustic wooden table"
+              fetchpriority="high" />
+          </picture>
+          <div class="heroText">
+            <h1>Golden drops from neighborhood hives</h1>
           </div>
-        </div>
-        <div class="recipeCollage" role="presentation">
-          <img src="%BASE_URL%media/foodPhotography/honey-cake.jpeg" alt="Slice of layered honey cake" />
-          <img src="%BASE_URL%media/foodPhotography/whippedHoney.png" alt="Creamy whipped honey" />
-          <img src="%BASE_URL%media/foodPhotography/HoneyLavenderIceCream.jpeg" alt="Homemade honey lavender ice cream" />
-          <img src="%BASE_URL%media/foodPhotography/honeyCheese.jpeg" alt="Cheese platter served with honey" />
-        </div>
-      </section>
+        </section>
 
-      <section id="visit" class="storySection sectionVisit">
-        <div class="visitGallery" aria-hidden="true">
-          <img class="visitImage" src="%BASE_URL%media/beefarm.jpeg" alt="" />
-          <img class="visitImage" src="%BASE_URL%media/beefarm2.jpeg" alt="" />
-          <img class="visitImage" src="%BASE_URL%media/beefarm3.jpeg" alt="" />
-        </div>
+        <section id="shop" class="storySection sectionShop">
+          <div class="storyInner">
+            <p class="sectionKicker">Seasonal pick</p>
+            <h2>Clover honey, soft floral notes and slow sweetness.</h2>
+            <p>
+              A gentle everyday honey from spring clover fields. Smooth texture,
+              bright aroma, and perfect for tea, toast, and warm desserts.
+            </p>
+            <a class="inlineLink" href="">Check out our honey selection</a>
+          </div>
+          <img class="storyImage" src="%BASE_URL%media/cloverhoneyJar.png" alt="Clover honey jar preview" />
+        </section>
 
-        <div class="storyInner">
-          <p class="sectionKicker">Visit the bees</p>
-          <h2>From hive tours to tasting flights</h2>
-          <p>
-            Drop by our weekend honey bar to sample seasonal batches, learn about
-            pollinators, and bring home your own jar straight from this month&apos;s harvest.
-          </p>
-        </div>
-      </section>
+        <section id="about" class="storySection sectionAbout">
+          <div class="storyInner">
+            <p class="sectionKicker">Our mission</p>
+            <h2>Pure honey, local bloom, slow craft.</h2>
+            <p>
+              Oh Honey works with neighborhood beekeepers to bottle honey that tastes
+              like the season it came from. No additives, no shortcuts, only careful
+              extraction and traceable harvests.
+            </p>
+            <a class="inlineLink" href="#visit">Meet the bees in person</a>
+          </div>
+          <img class="storyImage" src="%BASE_URL%media/honeyAndFlowers.jpeg" alt="Honey jar surrounded by flowers" />
+        </section>
+
+        <section id="recipes" class="storySection sectionRecipes">
+          <div class="storyInner">
+            <p class="sectionKicker">Sweeten up your day</p>
+            <h2>Cook with our honey</h2>
+            <p>
+              Start your morning with whipped honey toast, finish dinner with warm
+              honey cake, and add a drizzle of floral sweetness to cheese boards and
+              vanilla desserts.
+            </p>
+            <div class="recipeLinks">
+              <a class="inlineLink" href="https://www.bbcgoodfood.com/recipes/honey-cake" target="_blank"
+                rel="noreferrer">Honey cake ideas</a>
+              <a class="inlineLink" href="https://www.loveandlemons.com/honey-recipes/" target="_blank"
+                rel="noreferrer">More honey recipes</a>
+            </div>
+          </div>
+          <div class="recipeCollage" role="presentation">
+            <img src="%BASE_URL%media/foodPhotography/honey-cake.jpeg" alt="Slice of layered honey cake" />
+            <img src="%BASE_URL%media/foodPhotography/whippedHoney.png" alt="Creamy whipped honey" />
+            <img src="%BASE_URL%media/foodPhotography/HoneyLavenderIceCream.jpeg"
+              alt="Homemade honey lavender ice cream" />
+            <img src="%BASE_URL%media/foodPhotography/honeyCheese.jpeg" alt="Cheese platter served with honey" />
+          </div>
+        </section>
+
+        <section id="visit" class="storySection sectionVisit">
+          <div class="visitGallery" aria-hidden="true">
+            <img class="visitImage" src="%BASE_URL%media/beefarm.jpeg" alt="" />
+            <img class="visitImage" src="%BASE_URL%media/beefarm2.jpeg" alt="" />
+            <img class="visitImage" src="%BASE_URL%media/beefarm3.jpeg" alt="" />
+          </div>
+
+          <div class="storyInner">
+            <p class="sectionKicker">Visit the bees</p>
+            <h2>From hive tours to tasting flights</h2>
+            <p>
+              Drop by our weekend honey bar to sample seasonal batches, learn about
+              pollinators, and bring home your own jar straight from this month&apos;s harvest.
+            </p>
+          </div>
+        </section>
+
+
+      </main>
 
       <footer class="siteFooter">
         <div class="footerLogoRow">
-          <span class="footerBee" data-inline-svg="media/svg/logo-bee.svg" role="img" aria-label="Oh Honey bee logo"></span>
+          <span class="footerBee" data-inline-svg="media/svg/logo-bee.svg" role="img"
+            aria-label="Oh Honey bee logo"></span>
         </div>
 
         <div class="footerGrid">
@@ -150,7 +163,7 @@
             <p>Saturday pop-up 10:00-15:00</p>
             <a href="mailto:hello@ohhoney.local">hello@ohhoney.local</a>
           </div>
-          
+
           <nav class="footerColumn" aria-label="Footer quick links">
             <h3>Quick links</h3>
             <a href="#about">Our Mission</a>
@@ -165,7 +178,7 @@
             <a href="#visit">Shipping & returns</a>
           </nav>
 
-         
+
 
           <nav class="footerColumn" aria-label="Follow us links">
             <h3>Follow us</h3>
@@ -183,7 +196,8 @@
           <p>&copy; 2026 Oh Honey</p>
         </div>
       </footer>
-    </main>
+    </div>
+
   </div>
   <script type="module" src="/src/main.ts"></script>
 </body>
